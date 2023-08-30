@@ -1,0 +1,36 @@
+/* Center content */
+.container {
+
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Style for the product card */
+  .border {
+    border: 1px solid #ddd;
+    padding: 10px;
+    transition: box-shadow 0.3s;
+    display: flex;
+
+  }
+  
+  .border:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Adjust input width */
+  .form-control {
+    width: 100%;
+  }
+  
+  .carta{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly  ;
+
+  }
+  .carta1 button{
+    margin: 5px;
+
+  }

@@ -1,0 +1,17 @@
+<!-- login-form.component.html -->
+<div class="login-container">
+    <form class="login-form" (ngSubmit)="login()">
+      <h2 class="mb-4">Login as Admin</h2>
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" [(ngModel)]="username">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" [(ngModel)]="password">
+      </div>
+      <button type="submit" class="btn btn-primary">Enter</button>
+      <span *ngIf="validations" class="validaciones">{{validations}}</span>
+    </form>
+  </div>
+  <!-- admin - admin123 -->

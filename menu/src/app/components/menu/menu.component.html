@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="firstpage text-center mb-4">
+    <h2>Ristorante Mio</h2>
+  </div>
+
+  <div class="mb-4">
+    <h3 style="text-align: center">Menu</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="list-unstyled">
+        <ng-container *ngFor="let category of categories; let i = index">
+          <li class="mb-4">
+            <h4>{{ category }}</h4>
+            <ul class="list-unstyled">
+              <ng-container
+                *ngFor="let product of getProductsByCategory(category)"
+              >
+                <li>
+                  <!-- Display product information -->
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-2"
+                  >
+                    <div>
+                      <p class="mb-1">{{ product.name }}</p>
+                    </div>
+                    <div>
+                      <p class="mb-1">{{ product.price | currency }}</p>
+                    </div>
+                  </div>
+                </li>
+              </ng-container>
+            </ul>
+
+            <!-- Display images for this category -->
+            <div class="image-container">
+              <div
+                *ngFor="
+                  let product of getProductsByCategory(category);
+                  trackBy: trackByProduct
+                "
+              >
+                <ng-container *ngIf="product.image">
+                  <div class="image-item">
+                    <img
+                      [src]="product.image"
+                      alt="{{ product.name }}"
+                      class="img-fluid small-image"
+                    />
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+
+            <hr class="my-4" *ngIf="i !== categories.length - 1" />
+          </li>
+        </ng-container>
+      </ul>
+    </div>
+  </div>
+</div>

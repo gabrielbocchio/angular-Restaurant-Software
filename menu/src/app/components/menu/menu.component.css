@@ -1,0 +1,27 @@
+.firstpage {
+    margin: 20px 0;
+    width: 100%;
+    height: 600px;
+    border: 2px solid #00A4BD;
+    padding: 10px;
+    box-shadow: 6px 4px #00A4BD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Esto creará columnas automáticas con un ancho mínimo de 200px */
+    gap: 10px; /* Espacio entre imágenes */
+  }
+  
+  .image-item {
+    overflow: hidden; /* Para que las imágenes no se desborden del contenedor */
+  }
+  
+  .small-image {
+    width: 100%;
+    height: auto;
+  }

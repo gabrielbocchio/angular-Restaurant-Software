@@ -1,0 +1,31 @@
+.custom-button {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 20px;
+    filter: brightness(1); /* Brillo completo para los botones */
+}
+
+.custom-container {
+    background-image: url('https://www.investireoggi.it/news/wp-content/uploads/sites/12/2021/11/Nuovi-ristoranti-dItalia-ecco-la-top-ten-secondo-gli-esperti-di-The-Fork.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.custom-container::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    z-index: -1;
+    filter: brightness(0.7); /* Brillo reducido para la imagen de fondo */
+}

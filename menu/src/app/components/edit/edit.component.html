@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+  <h2 class="text-center">Edit Menu</h2>
+
+  <div *ngFor="let product of products" class="border rounded p-3 mb-3">
+    <div *ngIf="!product.isEditing; else editMode" class="carta">
+      <div class="carta1">
+        <p><strong>Name:</strong> {{ product.name }}</p>
+        <p style="display: inline-block; max-width: 20ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"><strong>Image:</strong>{{ product.image }}</p>
+      </div>
+      <div class="carta1">
+        <p><strong>Category:</strong> {{ product.category }}</p>
+        <p><strong>Price:</strong> {{ product.price | currency }}</p>
+      </div>
+      <div class="carta1">
+        <button class="btn btn-primary mr-2" (click)="startEditing(product)">
+          Edit
+        </button>
+        <button
+          class="btn btn-danger"
+          (click)="deleteProduct(product._id, product)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+
+    <ng-template #editMode>
+      <input class="form-control mb-2" [(ngModel)]="product.name" />
+      <input class="form-control mb-2" [(ngModel)]="product.image" />
+      <select class="form-control mb-2" id="category" [(ngModel)]="product.category" required name="category" style="width: 60%;">
+        <option value="appetizer">Appetizer</option>
+        <option value="first course">First Course</option>
+        <option value="main course">Main Course</option>
+        <option value="dessert">Dessert</option>
+        <option value="other">Other</option>
+      </select>
+      <input class="form-control mb-2" [(ngModel)]="product.price" style="width: 25%;" />
+      <button
+        class="btn btn-success mr-2"
+        (click)="confirmEdit(product._id, product)"
+      >
+        Confirm
+      </button>
+      <button class="btn btn-secondary" (click)="cancelEdit(product)" style="margin-left:5px">
+        Cancel
+      </button>
+    </ng-template>
+  </div>
+</div>
+
+
